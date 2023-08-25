@@ -19,7 +19,7 @@
   display: flex;
   height: 9vh;
   justify-content: space-between;
-  padding: 0 5px;
+  padding: 0px;
   width: 100%;
 }
 
@@ -42,6 +42,39 @@
   flex-direction: column;
   font-size: 12px;
   justify-content: center;
+}
+
+.chat_header_user_info h1 {
+  font-size: 13px;
+}
+
+.chat_header_user_info span{
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .chat{
+    max-width: 600px;
+    height: 600px;
+    position: fixed;
+    top: 20%;
+    right: 38%;
+    box-shadow: 0 0 6px black;
+    border-radius: 0 0 0 5px;
+  }
+  
+  .chat_header {
+    height: 10vh;
+  }
+  
+  .chat_header_user img {
+    height: 65px;
+    width: 70px;
+  }
+  
+  .chat_header_user_info {
+    font-size: 14px;
+  }
 }
 
 .chat_user_info {
@@ -78,3 +111,4 @@
   margin: 1rem 0;
   padding: 1rem 0;
 }
+

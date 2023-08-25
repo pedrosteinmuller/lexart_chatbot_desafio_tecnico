@@ -19,13 +19,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={styles.chat}>
         <div className={styles.chat_header}>
           <ArrowBackIcon />
           <div className={styles.chat_header_user}>
             <Image src={optusIcon} alt="" />
             <div className={styles.chat_header_user_info}>
-              <span>Optus</span>
+              <h1>Optus</h1>
               <span>Tipically replies in a day</span>
             </div>
           </div>
