@@ -53,7 +53,21 @@ export default function Home() {
 
         </div>
 
-        <div className={styles.chat_messages}></div>
+        <div className={styles.chat_messages}>
+          <span className={styles.chat_time}>11:05 AM</span>
+
+          <div className={styles.message_own}>
+            <p>
+              Testando
+            </p>
+          </div>
+
+          <div className={styles.message}>
+            <p>
+              exemplo de messagem de texto
+            </p>
+          </div>
+        </div>
 
         <div className={styles.chat_type_messages}>
           <AddIcon className={styles.add_icon} />
