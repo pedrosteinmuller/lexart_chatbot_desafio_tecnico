@@ -1,9 +1,7 @@
 enum ErrorHandleMessages {
-  NOT_FOUND = "Not found",
-  INVALID_EMAIL_OR_PASSWORD = "Email or password is incorrect.",
-  USER_ALREADY_EXISTS = "User already exists",
+  INVALID_USERNAME_OR_PASSWORD = "Username or password incorrect.",
   INTERNAL_ERROR = "An internal error has occurred.",
-  INVALID_ID = "Invalid id",
+  USER_ALREADY_EXISTS = "Username already exists.",
 }
 
 export default ErrorHandleMessages;
