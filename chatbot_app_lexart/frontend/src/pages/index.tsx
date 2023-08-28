@@ -13,6 +13,7 @@ import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import MicIcon from "@mui/icons-material/Mic";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import SendIcon from "@mui/icons-material/Send";
+import Chatbot from "../components/Chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,9 +58,7 @@ export default function Home() {
           <span className={styles.chat_time}>11:05 AM</span>
 
           <div className={styles.message_own}>
-            <p>
-              Testando
-            </p>
+            <Chatbot />
           </div>
 
           <div className={styles.message}>
