@@ -92,14 +92,22 @@ const Chatbot: React.FC = () => {
           }
         />
     </div>
+      <div className={`${styles['messages-container']} messages-container`}>
+        {messages.map((message, index) => (
+          <div key={index} className={`message ${message.user}`}>
+            {message.text}
+          </div>
+        ))}
+        {showLoanOptions && <LoanOptions onSelectOption={handleLoanOption} />}
+      </div>
       <div className={styles['user-input']}>
-      <div className={styles1.chat_type_messages}>
+        <div className={styles1.chat_type_messages}>
         <AddIcon className={styles1.add_icon} />
         <CameraAltIcon />
         <InsertPhotoIcon />
         <MicIcon />
-      </div>
-        <input
+        </div>
+      <input
           type="text"
           placeholder="Type your message..."
           value={inputText}
@@ -109,14 +117,6 @@ const Chatbot: React.FC = () => {
           onKeyDown={handleInputKeyPress}
         />
         <button onClick={() => sendMessage(inputText, "user")}>Send</button>
-      </div>
-      <div className={`${styles['messages-container']} messages-container`}>
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.user}`}>
-            {message.text}
-          </div>
-        ))}
-        {showLoanOptions && <LoanOptions onSelectOption={handleLoanOption} />}
       </div>
     </div>
   );

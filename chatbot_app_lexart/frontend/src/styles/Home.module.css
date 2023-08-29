@@ -111,9 +111,9 @@
   padding: 1rem 0;
 }
 
-.chat_messages {
-  height: 65%;
-}
+/* .chat_messages {
+  height: 100%;
+} */
 /* 
 .chat_type_messages {
   background-color: white;

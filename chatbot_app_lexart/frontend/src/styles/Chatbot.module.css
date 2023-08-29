@@ -1,7 +1,6 @@
 .chatbot-container {
   width: 350px;
-  height: 500px;
-  border: 1px solid #ccc;
+  height: 300px;
   margin-bottom: 200px;
   border-radius: 8px;
   padding: 22px;
@@ -30,10 +29,16 @@
 }
 
 .user-input {
+  padding: 15px;
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 40px;
+  z-index: 1;
 }
+
+
 
 .user-input input[type="text"] {
   border: 2px solid #ccc;
