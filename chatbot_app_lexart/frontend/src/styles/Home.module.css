@@ -18,7 +18,7 @@
   color: white;
   display: flex;
   height: 9vh;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0px;
   width: 100%;
 }
@@ -55,9 +55,8 @@
 @media only screen and (min-width: 1200px) {
   .chat{
     max-width: 600px;
-    height: 600px;
     position: fixed;
-    top: 20%;
+    top: 5%;
     right: 38%;
     box-shadow: 0 0 6px black;
     border-radius: 0 0 0 5px;
@@ -115,7 +114,7 @@
 .chat_messages {
   height: 65%;
 }
-
+/* 
 .chat_type_messages {
   background-color: white;
   align-items: center;
@@ -123,7 +122,7 @@
   display: flex;
   justify-content: space-between;
   padding: 4px;
-}
+} */
 
 .chat_messages {
   display: flex;

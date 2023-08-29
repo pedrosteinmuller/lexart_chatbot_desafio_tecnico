@@ -1,9 +1,10 @@
 .chatbot-container {
   width: 350px;
+  height: 500px;
   border: 1px solid #ccc;
+  margin-bottom: 200px;
   border-radius: 8px;
-  padding: 16px;
-  margin: 0 auto;
+  padding: 22px;
 }
 
 .chatbot-user-input{
@@ -31,7 +32,7 @@
 .user-input {
   display: flex;
   align-items: center;
-  margin-top: 11rem;
+  margin-top: 2rem;
 }
 
 .user-input input[type="text"] {
