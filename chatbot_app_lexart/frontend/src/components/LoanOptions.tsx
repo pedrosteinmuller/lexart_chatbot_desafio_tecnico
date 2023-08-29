@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/Loan.module.css'
 
 interface Props {
   onSelectOption: (option: string) => void;
@@ -10,8 +11,10 @@ const LoanOptions: React.FC<Props> = ({ onSelectOption }) => {
   };
 
   return (
-    <div className="loan-options">
-      <button onClick={() => handleOptionClick('Apply for a loan')}>
+    <div className={styles['loan-options']}>
+      <button onClick={() => handleOptionClick(
+        'Ok, lets do it. Click on the link below to make your loan!'
+      )}>
         Do you want to apply for a loan?
       </button>
       <button onClick={() => handleOptionClick('Loan conditions')}>

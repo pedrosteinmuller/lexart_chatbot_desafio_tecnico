@@ -105,8 +105,8 @@
 
 .chat_user {
   align-items: center;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  border-bottom: 1px solid rgb(231, 222, 222);
+  border-top: 1px solid rgb(231, 222, 222);
   display: flex;
   margin: 1rem 0;
   padding: 1rem 0;
@@ -120,12 +120,9 @@
   background-color: white;
   align-items: center;
   bottom: 0%;
-  border-top: 1px solid black;
   display: flex;
   justify-content: space-between;
-  padding: 7px;
-  position: fixed;
-  width: 100%;
+  padding: 4px;
 }
 
 .chat_messages {
@@ -169,20 +166,6 @@
   padding: 8px;
   border-radius: 10px 10px 0 10px;
   margin-bottom: 1rem;
-}
-
-.input_message input {
-  border-radius: 6px;
-  border: 1px solid gray;
-  padding: 10px;
-  position: relative;
-}
-
-.input_message svg {
-  color: #0085FF;
-  position: absolute;
-  right: 13%;
-  top: 25%;
 }
 
 .add_icon {

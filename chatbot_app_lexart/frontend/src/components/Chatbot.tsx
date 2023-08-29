@@ -1,5 +1,11 @@
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from 'react';
 import LoanOptions from './LoanOptions';
+import styles from '../styles/Chatbot.module.css'
+import styles1 from "@/src/styles/Home.module.css";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import AddIcon from "@mui/icons-material/Add";
+import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
+import MicIcon from "@mui/icons-material/Mic";
 
 interface Message {
   text: string;
@@ -35,12 +41,10 @@ const Chatbot: React.FC = () => {
     if (messages.length > 0) {
       const latestMessage = messages[messages.length - 1];
       if (latestMessage.user === 'user') {
-        const response = processMessage(latestMessage.text);
-        if (typeof response === 'string') {
-          sendMessage(response, 'chatbot');
-        }
+        return processMessage(latestMessage.text);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
   
 
@@ -56,7 +60,6 @@ const Chatbot: React.FC = () => {
       sendMessage("Sure, what do you want?", "chatbot");
     } else if (text.toLowerCase().includes('loan')) {
       setShowLoanOptions(true);
-      return "loanOptions";
     } else {
       sendMessage("I'm sorry, I didn't understand that.", "chatbot");
     }
@@ -64,35 +67,12 @@ const Chatbot: React.FC = () => {
 
   const handleLoanOption = (option: string) => {
     sendMessage(option, 'user');
-    const response = processMessage(option);
-    if (typeof response === 'string') {
-      sendMessage(response, 'chatbot');
-    }
+      return processMessage(option);
   };
 
   return (
-    <div className="chatbot-container">
-      <div className="messages-container">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.user}`}>
-            {message.text}
-          </div>
-        ))}
-        {showLoanOptions && <LoanOptions onSelectOption={handleLoanOption} />}
-      </div>
-      <div className="user-input">
-        <input
-          type="text"
-          placeholder="Type your message..."
-          value={inputText}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setInputText(e.target.value)
-          }
-          onKeyDown={handleInputKeyPress}
-        />
-        <button onClick={() => sendMessage(inputText, "user")}>Send</button>
-      </div>
-      <div>
+    <div className={styles["chatbot-container"]}>
+      <div className={styles["chatbot-user-input"]}>
         <input
           type="text"
           placeholder="Username"
@@ -109,6 +89,32 @@ const Chatbot: React.FC = () => {
             setPassword(e.target.value)
           }
         />
+    </div>
+      <div className={`${styles['messages-container']} messages-container`}>
+        {messages.map((message, index) => (
+          <div key={index} className={`message ${message.user}`}>
+            {message.text}
+          </div>
+        ))}
+        {showLoanOptions && <LoanOptions onSelectOption={handleLoanOption} />}
+      </div>
+      <div className={styles['user-input']}>
+      <div className={styles1.chat_type_messages}>
+        <AddIcon className={styles1.add_icon} />
+        <CameraAltIcon />
+        <InsertPhotoIcon />
+        <MicIcon />
+      </div>
+        <input
+          type="text"
+          placeholder="Type your message..."
+          value={inputText}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setInputText(e.target.value)
+          }
+          onKeyDown={handleInputKeyPress}
+        />
+        <button onClick={() => sendMessage(inputText, "user")}>Send</button>
       </div>
     </div>
   );

@@ -7,12 +7,6 @@ import optusIcon from "../../public/optus-icon.png";
 import CheckIcon from "@mui/icons-material/Check";
 import InfoIcon from "@mui/icons-material/Info";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import AddIcon from "@mui/icons-material/Add";
-import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
-import MicIcon from "@mui/icons-material/Mic";
-import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
-import SendIcon from "@mui/icons-material/Send";
 import Chatbot from "../components/Chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -53,35 +47,9 @@ export default function Home() {
           </div>
 
         </div>
-
         <div className={styles.chat_messages}>
           <span className={styles.chat_time}>11:05 AM</span>
-
-          <div className={styles.message_own}>
             <Chatbot />
-          </div>
-
-          <div className={styles.message}>
-            <p>
-              exemplo de messagem de texto
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.chat_type_messages}>
-          <AddIcon className={styles.add_icon} />
-          <CameraAltIcon />
-          <InsertPhotoIcon />
-          <MicIcon />
-          <div className={styles.input_message}>
-            <input
-              type="text"
-              placeholder="Aa"
-              className={styles.input_message}
-            />
-            <SentimentSatisfiedAltIcon />
-          </div>
-          <SendIcon className={styles.send_message} />
         </div>
       </main>
     </>
