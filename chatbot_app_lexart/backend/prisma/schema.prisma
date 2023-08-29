@@ -11,16 +11,21 @@ datasource db {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  username String   @unique
-  password String
-  createdAt DateTime
+  id            Int            @id @default(autoincrement())
+  username      String         @unique
+  password      String
+  createdAt     DateTime
   conversations Conversation[]
+
+  @@map(name: "users")
 }
 
 model Conversation {
-  id      Int      @id @default(autoincrement())
-  content String
-  user    User     @relation(fields: [userId], references: [id])
-  userId  Int
+  id        Int      @id @default(autoincrement())
+  content   String
+  createdAt DateTime
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+
+  @@map(name: "conversations")
 }
