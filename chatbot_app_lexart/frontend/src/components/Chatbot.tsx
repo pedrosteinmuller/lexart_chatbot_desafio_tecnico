@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from 'react';
+import LoanOptions from './LoanOptions';
 
 interface Message {
   text: string;
@@ -11,6 +12,7 @@ const Chatbot: React.FC = () => {
   const [inputText, setInputText] = useState<string>('');
   const [username, setUsername] = useState<string>(''); 
   const [password, setPassword] = useState<string>('');
+  const [showLoanOptions, setShowLoanOptions] = useState(false);
 
   
   const sendMessage = (text: string, user: 'user' | 'chatbot') => {
@@ -33,10 +35,14 @@ const Chatbot: React.FC = () => {
     if (messages.length > 0) {
       const latestMessage = messages[messages.length - 1];
       if (latestMessage.user === 'user') {
-        return processMessage(latestMessage.text);
+        const response = processMessage(latestMessage.text);
+        if (typeof response === 'string') {
+          sendMessage(response, 'chatbot');
+        }
       }
     }
   }, [messages]);
+  
 
   const processMessage = (text: string) => {
     if (text.toLowerCase().includes('hello')) {
@@ -49,10 +55,18 @@ const Chatbot: React.FC = () => {
     } else if (text.toLowerCase().includes('i want')) {
       sendMessage("Sure, what do you want?", "chatbot");
     } else if (text.toLowerCase().includes('loan')) {
-      sendMessage("Here are your loan options:", "chatbot");
-      // Lógica para exibir opções de empréstimo
+      setShowLoanOptions(true);
+      return "loanOptions";
     } else {
       sendMessage("I'm sorry, I didn't understand that.", "chatbot");
+    }
+  };
+
+  const handleLoanOption = (option: string) => {
+    sendMessage(option, 'user');
+    const response = processMessage(option);
+    if (typeof response === 'string') {
+      sendMessage(response, 'chatbot');
     }
   };
 
@@ -64,6 +78,7 @@ const Chatbot: React.FC = () => {
             {message.text}
           </div>
         ))}
+        {showLoanOptions && <LoanOptions onSelectOption={handleLoanOption} />}
       </div>
       <div className="user-input">
         <input
