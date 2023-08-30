@@ -10,13 +10,10 @@ interface IUser {
 }
 
 export default class UserService {
-  public prisma: PrismaClient;
 
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
+  constructor(private prisma = new PrismaClient()) {}
   async registerUser(username: string, password: string): Promise<IUser> {
-    try {
+    try {      
       const existingUser = await this.prisma.user.findUnique({
         where: {
           username: username,
