@@ -18,8 +18,6 @@ interface Message {
 const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState<string>('');
-  const [username, setUsername] = useState<string>(''); 
-  const [password, setPassword] = useState<string>('');
   const [showLoanOptions, setShowLoanOptions] = useState(false);
 
   const sendMessage = (text: string, user: 'user' | 'chatbot') => {

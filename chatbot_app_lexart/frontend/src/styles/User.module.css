@@ -1,0 +1,28 @@
+.user-container {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  right: 0;
+  margin-right: 500px;
+  }
+
+.popup {
+  /* Seus estilos atuais para o popup */
+  animation: fadeOut 4s forwards;
+  opacity: 1;
+  display: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.show {
+  display: block;
+}
