@@ -1,5 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from 'react';
+import axios from 'axios';
 import LoanOptions from './LoanOptions';
+import UserCreation from './UserCreation';
 import styles from '../styles/Chatbot.module.css'
 import styles1 from "@/src/styles/Home.module.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
@@ -20,7 +22,6 @@ const Chatbot: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [showLoanOptions, setShowLoanOptions] = useState(false);
 
-  
   const sendMessage = (text: string, user: 'user' | 'chatbot') => {
     const newMessage: Message = {
       text,
@@ -74,24 +75,7 @@ const Chatbot: React.FC = () => {
 
   return (
     <div className={styles["chatbot-container"]}>
-      <div className={styles["chatbot-user-input"]}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setUsername(e.target.value)
-          }
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setPassword(e.target.value)
-          }
-        />
-    </div>
+      <UserCreation />
       <div className={`${styles['messages-container']} messages-container`}>
         {messages.map((message, index) => (
           <div key={index} className={`message ${message.user}`}>

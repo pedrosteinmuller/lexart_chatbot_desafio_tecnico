@@ -2,11 +2,8 @@ import { PrismaClient } from '@prisma/client';
 import { compare } from 'bcryptjs';
 
 class LoginService {
-  private prisma: PrismaClient;
 
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
+  constructor(private prisma = new PrismaClient()) {}
 
   private async comparePassword(inputPassword: string, hashBD: string) {
     try {

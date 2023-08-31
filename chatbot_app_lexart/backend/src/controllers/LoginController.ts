@@ -4,13 +4,10 @@ import HttpStatus from '../enum/HttpStatus';
 import ErrorHandleMessages from '../enum/ErrorHandleMessages';
 
 class LoginController {
-  private loginService: LoginService;
 
-  constructor() {
-    this.loginService = new LoginService();
-  }
+  constructor(private loginService = new LoginService()) {}
 
-  async login(req: Request, res: Response) {
+  login = async(req: Request, res: Response) => {
     const { username, password } = req.body;
 
     try {

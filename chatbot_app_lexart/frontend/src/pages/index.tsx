@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 import { Inter } from "next/font/google";
 import styles from "@/src/styles/Home.module.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
