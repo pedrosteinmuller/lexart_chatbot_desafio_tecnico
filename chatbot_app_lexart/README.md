@@ -1,38 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web Chatbot Project
+
+This project consists of a fullstack project that I participated in a selection process for a fullstack developer job at LexartLabs.
+
+-> Technologies used in Backend
+
+- Node.js;
+- Express.js;
+- Prisma;
+- Typescript;
+- dotenv, bcypt.js, jsonwebtoken, nodemon
+
+-> Technologies used in Frontend
+
+- React.js;
+- Next.js;
+- Axios;
+- Typescript;
+
+## Overview
+
+Welcome to the Web Chatbot project! This chatbot is designed to engage in conversations based on trigger terms, require user authentication, display loan options, provide loan information, and export conversation history to a CSV file.
+
+## Features
+
+- Interpretation of trigger terms: "Hello," "Goodbye," "Good," and "I want" to initiate conversations.
+- User authentication required to continue the conversation.
+- Display of loan options upon encountering the term "loan."
+- Information pages for applying for a loan, loan conditions, and help.
+- Conversation closure and storage in the database when the user uses the term "Goodbye."
+- Export of conversation history to a CSV file.
 
 ## Getting Started
 
-First, run the development server:
+### Cloning the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/pedrosteinmuller/lexart_chatbot_desafio_tecnico.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installing Dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+cd chatbot_app_lexart
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Setup and Usage
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+Navigate to the project directory: cd lexart_chatbot_desafio_tecnico && cd chatbot_app_lexart
+Install backend dependencies: cd backend && npm install
+Install frontend dependencies: cd frontend && npm install
+Start the backend server: npm start (inside the backend directory)
+Start the frontend application: npm run dev (inside the frontend directory)
+Access the frontend application at http://localhost:3000.
+```
