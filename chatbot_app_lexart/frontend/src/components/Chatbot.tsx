@@ -1,5 +1,4 @@
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from 'react';
-import axios from 'axios';
 import LoanOptions from './LoanOptions';
 import UserCreation from './UserCreation';
 import styles from '../styles/Chatbot.module.css'
@@ -8,6 +7,7 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import AddIcon from "@mui/icons-material/Add";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import MicIcon from "@mui/icons-material/Mic";
+import ExportChat from './ExportChat';
 
 interface Message {
   text: string;
@@ -19,6 +19,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState<string>('');
   const [showLoanOptions, setShowLoanOptions] = useState(false);
+  const [showExportButton, setShowExportButton] = useState(false);
 
   const sendMessage = (text: string, user: 'user' | 'chatbot') => {
     const newMessage: Message = {
@@ -52,7 +53,7 @@ const Chatbot: React.FC = () => {
       sendMessage("Hello! How can I assist you today?", "chatbot");
     } else if (text.toLowerCase().includes('goodbye')) {
       sendMessage("Goodbye! Have a great day.", "chatbot");
-      // Lógica para armazenar conversa no histórico e finalizar
+      setShowExportButton(true);
     } else if (text.toLowerCase().includes('good')) {
       sendMessage("I'm glad to hear that!", "chatbot");
     } else if (text.toLowerCase().includes('i want')) {
@@ -82,6 +83,7 @@ const Chatbot: React.FC = () => {
         ))}
         {showLoanOptions && <LoanOptions onSelectOption={handleLoanOption} />}
       </div>
+      {showExportButton && <ExportChat />}
       <div className={styles['user-input']}>
         <div className={styles1.chat_type_messages}>
         <AddIcon className={styles1.add_icon} />
